@@ -15,9 +15,21 @@
 		<a href>123</a>-->
 		<!-- <MyStyle/> -->
 		<!-- <MyForms/> -->
-		<LifeCycle/>
 		<!-- <MyProps a="1" b="2" c="3"/> -->
 		<!-- <MyProps @abc="prop($event)"/> -->
+		<!-- <LifeCycle/> -->
+		<!-- <InstanceProperties yo="yo." wangergou="ergou" @click="yo"/> -->
+		<!-- <MyRef/> -->
+		<!-- <ProvideInject jojo="olaolaola"/> -->
+		<!-- 
+			provide 和 inject 绑定并不是可响应的。这是刻意为之的。
+			然而，如果你传入了一个可监听的对象，那么其对象的属性还是可响应的。
+		-->
+		<!-- <input type="text" v-model="inp">
+		inp:{{inp}}-->
+		<!-- <InstanceData/> -->
+		<!-- <MyMixins/> -->
+		<MyExtends/>
 	</div>
 </template>
 
@@ -29,7 +41,13 @@ import MyEmit from './components/MyEmit'
 import MyStyle from './components/MyStyle'
 import MyForms from './components/MyForms'
 import MyProps from './components/MyProps'
+import MyRef from './components/MyRef'
+import MyMixins from './components/MyMixins'
+import MyExtends from './components/MyExtends'
 import LifeCycle from './components/LifeCycle'
+import InstanceProperties from './components/InstanceProperties'
+import InstanceData from './components/InstanceData'
+import ProvideInject from './components/ProvideInject'
 
 export default {
 	// 2.注册组件到当前 App.vue 中
@@ -40,23 +58,36 @@ export default {
 		MyEmit,
 		MyStyle,
 		MyForms,
+		MyRef,
+		MyMixins,
+		MyExtends,
 		LifeCycle,
-		MyProps
+		MyProps,
+		InstanceProperties,
+		InstanceData,
+		ProvideInject
 	},
 	data() {
-		return { words: '' }
+		return { words: '', dio: 'mudamuda', jojo: 'olaola' }
+	},
+	provide() {
+		return { inp: 'inp' }
 	},
 	methods: {
 		yo() {
 			console.log('Yo.')
 		},
-		jojo(a) {
-			console.log('olaolaolaola', a)
-			this.words = a
-		},
+		// jojo(a) {
+		// 	console.log('olaolaolaola', a)
+		// 	this.words = a
+		// },
 		prop(a) {
 			console.log(a)
 		}
+	},
+	mounted() {
+		// this.$children 表示当前实例的直接子组件
+		console.log('children', this.$children)
 	}
 }
 </script>

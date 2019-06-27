@@ -6,6 +6,17 @@ import router from './router'; // 引用路由文件
 
 Vue.config.productionTip = false;
 
+// 全局注册一个混入，影响注册之后所有创建的每个 Vue 实例。
+// 插件作者可以使用混入，向组件注入自定义的行为。不推荐在应用代码中使用。
+Vue.mixin({
+    methods: {
+        mixin_ajax() {
+            console.log('mixin 请求ajax');
+        }
+    }
+});
+
+
 /* eslint-disable no-new */
 new Vue({
     el: '#app', // 表示当前实例在 index.html 文件中 id="app" 的标签
