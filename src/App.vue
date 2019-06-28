@@ -27,7 +27,6 @@
 		-->
 		<!-- <input type="text" v-model="inp">
 		inp:{{inp}}-->
-		<!-- <InstanceData/> -->
 		<!-- <MyMixins/> -->
 		<MyExtends/>
 	</div>
@@ -46,7 +45,6 @@ import MyMixins from './components/MyMixins'
 import MyExtends from './components/MyExtends'
 import LifeCycle from './components/LifeCycle'
 import InstanceProperties from './components/InstanceProperties'
-import InstanceData from './components/InstanceData'
 import ProvideInject from './components/ProvideInject'
 
 export default {
@@ -64,7 +62,6 @@ export default {
 		LifeCycle,
 		MyProps,
 		InstanceProperties,
-		InstanceData,
 		ProvideInject
 	},
 	data() {

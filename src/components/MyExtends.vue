@@ -5,7 +5,6 @@
 		{{yo()}}
 		<!-- 全局混入 -->
 		{{mixin_ajax()}}
-		{{extend_ajax()}}
 	</div>
 </template>
 
