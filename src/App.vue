@@ -28,7 +28,13 @@
 		<!-- <input type="text" v-model="inp">
 		inp:{{inp}}-->
 		<!-- <MyMixins/> -->
-		<MyExtends/>
+		<!-- <MyExtends/> -->
+		<!-- <MyPlugin/> -->
+		<!-- <MyData/> -->
+		<!-- <MyFilter/> -->
+		<!-- <MyComputed/> -->
+		<!-- <MyWatch/> -->
+		<MyDirective/>
 	</div>
 </template>
 
@@ -43,6 +49,12 @@ import MyProps from './components/MyProps'
 import MyRef from './components/MyRef'
 import MyMixins from './components/MyMixins'
 import MyExtends from './components/MyExtends'
+import MyData from './components/MyData'
+import MyPlugin from './components/MyPlugin.vue'
+import MyFilter from './components/MyFilter'
+import MyComputed from './components/MyComputed'
+import MyWatch from './components/MyWatch'
+import MyDirective from './components/MyDirective'
 import LifeCycle from './components/LifeCycle'
 import InstanceProperties from './components/InstanceProperties'
 import ProvideInject from './components/ProvideInject'
@@ -59,6 +71,12 @@ export default {
 		MyRef,
 		MyMixins,
 		MyExtends,
+		MyPlugin,
+		MyData,
+		MyFilter,
+		MyComputed,
+		MyWatch,
+		MyDirective,
 		LifeCycle,
 		MyProps,
 		InstanceProperties,
@@ -68,7 +86,7 @@ export default {
 		return { words: '', dio: 'mudamuda', jojo: 'olaola' }
 	},
 	provide() {
-		return { inp: 'inp' }
+		return { inp: this.jojo }
 	},
 	methods: {
 		yo() {
@@ -84,7 +102,8 @@ export default {
 	},
 	mounted() {
 		// this.$children 表示当前实例的直接子组件
-		console.log('children', this.$children)
+		// console.log('children', this.$children)
+		console.log('App.vue Mounted')
 	}
 }
 </script>
