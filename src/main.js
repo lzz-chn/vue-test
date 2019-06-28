@@ -3,6 +3,7 @@
 import Vue from 'vue'; // 引用 vue 框架
 import App from './App'; // 引用 App.vue 根组件
 import router from './router'; // 引用路由文件
+import { MyPlugin_Fun, MyPlugin_Obj } from './components/MyPlugin';
 
 Vue.config.productionTip = false;
 
@@ -16,6 +17,20 @@ Vue.mixin({
     }
 });
 
+// 利用在 Vue 原型上添加方法实现全局使用
+Vue.prototype.ajax = () => {
+    console.log('prototype ajax');
+};
+
+// 安装 Vue.js 插件。如果插件是一个对象，必须提供 install 方法。
+// 如果插件是一个函数，它会被作为 install 方法。install 方法调用时，会将 Vue 作为参数传入。
+// 该方法需要在调用 new Vue() 之前被调用。
+Vue.use(MyPlugin_Fun, 'olaolaola');
+Vue.use(MyPlugin_Obj, 'mudamudamuda');
+// 调用 MyPlugin_Fun 插件中的 myPluginFunction()方法
+Vue.myPluginFunction();
+// 打印 MyPlugin_Fun 插件中的myPluginValue的属性
+console.log('Vue.myPluginValue:', Vue.myPluginValue);
 
 /* eslint-disable no-new */
 new Vue({
