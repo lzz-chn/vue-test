@@ -34,7 +34,34 @@
 		<!-- <MyFilter/> -->
 		<!-- <MyComputed/> -->
 		<!-- <MyWatch/> -->
-		<MyDirective/>
+		<!-- <MyDirective/> -->
+		<!-- <MyColor /> -->
+		<MySlot>
+			<template v-slot:default>
+				<h4>slot to App.vue</h4>
+				<h5>slot to App.vue</h5>
+			</template>
+			<!-- 自定义名称插槽 v-slot:插槽名称="插槽数据"-->
+			<template v-slot:box1>
+				<h6 style="background:pink">slot to App.vue</h6>
+			</template>
+			<!-- v-slot: 可以缩写为 # -->
+			<template #box2="data">
+				<div>接收数据 :</div>
+				data.jojo: {{data.jojo}}
+				<br />
+				data.dio: {{data.dio}}
+			</template>
+			<!-- 使用解构赋值，重名接收的数据 -->
+			<template v-slot:box3="{jojo, dio}">
+				<div>接收数据 :</div>
+				jojo: {{jojo}}
+				<br />
+				dio: {{dio}}
+				<br />
+				tmp: {{tmp}}
+			</template>
+		</MySlot>
 	</div>
 </template>
 
@@ -55,6 +82,8 @@ import MyFilter from './components/MyFilter'
 import MyComputed from './components/MyComputed'
 import MyWatch from './components/MyWatch'
 import MyDirective from './components/MyDirective'
+import MyColor from './components/MyColor'
+import MySlot from './components/MySlot'
 import LifeCycle from './components/LifeCycle'
 import InstanceProperties from './components/InstanceProperties'
 import ProvideInject from './components/ProvideInject'
@@ -79,6 +108,8 @@ export default {
 		MyDirective,
 		LifeCycle,
 		MyProps,
+		MyColor,
+		MySlot,
 		InstanceProperties,
 		ProvideInject
 	},
@@ -103,7 +134,7 @@ export default {
 	mounted() {
 		// this.$children 表示当前实例的直接子组件
 		// console.log('children', this.$children)
-		console.log('App.vue Mounted')
+		console.log('-------App.vue Mounted-------')
 	}
 }
 </script>
