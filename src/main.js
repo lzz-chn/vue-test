@@ -4,6 +4,7 @@ import Vue from 'vue'; // 引用 vue 框架
 import App from './App'; // 引用 App.vue 根组件
 import router from './router'; // 引用路由文件
 import { MyPlugin_Fun, MyPlugin_Obj } from './components/MyPlugin';
+import MyComponent from "./components/MyComponent";
 
 Vue.config.productionTip = false;
 
@@ -31,6 +32,7 @@ Vue.prototype.ajax = () => {
 // Vue.myPluginFunction();
 // // 打印 MyPlugin_Fun 插件中的myPluginValue的属性
 // console.log('Vue.myPluginValue:', Vue.myPluginValue);
+
 
 /* eslint-disable no-new */
 new Vue({

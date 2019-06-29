@@ -36,7 +36,7 @@
 		<!-- <MyWatch/> -->
 		<!-- <MyDirective/> -->
 		<!-- <MyColor /> -->
-		<MySlot>
+		<MySlot v-if="false">
 			<template v-slot:default>
 				<h4>slot to App.vue</h4>
 				<h5>slot to App.vue</h5>
@@ -62,6 +62,13 @@
 				tmp: {{tmp}}
 			</template>
 		</MySlot>
+		<!-- <CompDynamic /> -->
+
+		<!-- 全局组件调用时不需要注册 -->
+		<component-example />
+		<component-async-example />
+		<component-async-webpack-example />
+		<!-- <MyTransition /> -->
 	</div>
 </template>
 
@@ -84,9 +91,11 @@ import MyWatch from './components/MyWatch'
 import MyDirective from './components/MyDirective'
 import MyColor from './components/MyColor'
 import MySlot from './components/MySlot'
+import MyTransition from './components/MyTransition'
 import LifeCycle from './components/LifeCycle'
 import InstanceProperties from './components/InstanceProperties'
 import ProvideInject from './components/ProvideInject'
+import CompDynamic from './components/CompDynamic'
 
 export default {
 	// 2.注册组件到当前 App.vue 中
@@ -110,11 +119,17 @@ export default {
 		MyProps,
 		MyColor,
 		MySlot,
+		MyTransition,
 		InstanceProperties,
-		ProvideInject
+		ProvideInject,
+		CompDynamic
 	},
 	data() {
-		return { words: '', dio: 'mudamuda', jojo: 'olaola' }
+		return {
+			words: '',
+			dio: 'mudamuda',
+			jojo: 'olaola'
+		}
 	},
 	provide() {
 		return { inp: this.jojo }
