@@ -65,11 +65,12 @@
 		<!-- <CompDynamic /> -->
 
 		<!-- 全局组件调用时不需要注册 -->
-		<component-example />
+		<!-- <component-example />
 		<component-async-example />
 		<component-async-webpack-example />
-		<component-factory-async-example/>
-		<!-- <MyTransition /> -->
+		<component-factory-async-example/>-->
+		<MyTransition />
+		<!-- <TransitionTest /> -->
 	</div>
 </template>
 
@@ -97,6 +98,7 @@ import LifeCycle from './components/LifeCycle'
 import InstanceProperties from './components/InstanceProperties'
 import ProvideInject from './components/ProvideInject'
 import CompDynamic from './components/CompDynamic'
+import TransitionTest from './components/TransitionTest'
 
 export default {
 	// 2.注册组件到当前 App.vue 中
@@ -123,7 +125,8 @@ export default {
 		MyTransition,
 		InstanceProperties,
 		ProvideInject,
-		CompDynamic
+		CompDynamic,
+		TransitionTest
 	},
 	data() {
 		return {
