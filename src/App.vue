@@ -69,8 +69,8 @@
 		<component-async-example />
 		<component-async-webpack-example />
 		<component-factory-async-example/>-->
-		<MyTransition />
-		<!-- <TransitionTest /> -->
+		<!-- <MyTransition /> -->
+		<TransitionTest />
 	</div>
 </template>
 
