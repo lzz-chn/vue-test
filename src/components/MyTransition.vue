@@ -145,7 +145,7 @@ export default {
 </script>	
 
 <style scoped>
-@import url(../../node_modules/animate.css/animate.min.css);
+/* @import url(../../node_modules/animate.css/animate.min.css); */
 /* 通过以下特性来自定义过渡类名，他们的优先级高于普通的类名 */
 /* md 为自定义过渡类名 */
 /* .box {
