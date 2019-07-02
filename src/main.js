@@ -3,12 +3,12 @@
 import Vue from 'vue'; // 引用 vue 框架
 import App from './App'; // 引用 App.vue 根组件
 import router from './router'; // 引用路由文件
-import BootstrapVue from 'bootstrap-vue'
+import BootstrapVue from 'bootstrap-vue';
 import 'animate.css/animate.min.css';
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 import { MyPlugin_Fun, MyPlugin_Obj } from './components/MyPlugin';
-import MyComponent from "./components/MyComponent";
+import MyComponent from './components/MyComponent';
 
 Vue.config.productionTip = false;
 
@@ -39,6 +39,39 @@ Vue.prototype.ajax = () => {
 // // 打印 MyPlugin_Fun 插件中的myPluginValue的属性
 // console.log('Vue.myPluginValue:', Vue.myPluginValue);
 
+// // 全局前置守卫
+// router.beforeEach((to, from, next) => {
+//     // console.log('to :', to); // to 代表即将进入的路由
+//     // console.log('from :', from); // from 表示正要离开的路由
+//     console.log('全局前置守卫');
+//     next(); // 继续执行当前匹配
+// });
+
+// // 全局解析守卫 在所有内部守卫与异步路由组件被解析后执行
+// router.beforeResolve((to, from, next) => {
+//     console.log('全局解析守卫');
+//     next(); // 继续执行当前匹配
+// });
+
+// // 全局后置钩子 DOM渲染前触发
+// router.afterEach((to, from) => {
+//     console.log('全局后置钩子');
+// });
+
+// 账号登陆练习
+router.beforeEach((to, from, next) => {
+    let login = false;
+
+    if (to.fullPath == '/admin/index') {
+        if (login) {
+            next(); 
+        } else {
+            next('/admin/login');
+        }
+    }else{
+        next();
+    }
+});
 
 /* eslint-disable no-new */
 new Vue({

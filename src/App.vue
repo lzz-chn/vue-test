@@ -70,7 +70,10 @@
 		<component-async-webpack-example />
 		<component-factory-async-example/>-->
 		<!-- <MyTransition /> -->
-		<TransitionTest />
+		<!-- <TransitionTest /> -->
+		<!-- <MyRouter /> -->
+		<!-- <MyRouterGuards/> -->
+		<router-view/>
 	</div>
 </template>
 
@@ -93,6 +96,9 @@ import MyWatch from './components/MyWatch'
 import MyDirective from './components/MyDirective'
 import MyColor from './components/MyColor'
 import MySlot from './components/MySlot'
+import MyRouter from './components/MyRouter'
+import MyRouterGuards from './components/MyRouterGuards'
+import MyRouterTest from './components/MyRouterTest'
 import MyTransition from './components/MyTransition'
 import LifeCycle from './components/LifeCycle'
 import InstanceProperties from './components/InstanceProperties'
@@ -122,6 +128,9 @@ export default {
 		MyProps,
 		MyColor,
 		MySlot,
+		MyRouter,
+		MyRouterGuards,
+		MyRouterTest,
 		MyTransition,
 		InstanceProperties,
 		ProvideInject,
@@ -164,8 +173,8 @@ export default {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	/* -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; */
-	/* text-align: center; */
-	color: #2c3e50;
+	text-align: center;
+	/* color: #2c3e50; */
 	/* margin-top: 60px; */
 }
 </style>
