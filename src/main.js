@@ -3,10 +3,16 @@
 import Vue from 'vue'; // 引用 vue 框架
 import App from './App'; // 引用 App.vue 根组件
 import router from './router'; // 引用路由文件
+import BootstrapVue from 'bootstrap-vue'
+import 'animate.css/animate.min.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { MyPlugin_Fun, MyPlugin_Obj } from './components/MyPlugin';
 import MyComponent from "./components/MyComponent";
 
 Vue.config.productionTip = false;
+
+Vue.use(BootstrapVue);
 
 // 全局注册一个混入，影响注册之后所有创建的每个 Vue 实例。
 // 插件作者可以使用混入，向组件注入自定义的行为。不推荐在应用代码中使用。
