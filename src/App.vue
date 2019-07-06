@@ -73,7 +73,8 @@
 		<!-- <TransitionTest /> -->
 		<!-- <MyRouter /> -->
 		<!-- <MyRouterGuards/> -->
-		<router-view/>
+		<router-view />
+		<MyVuex />
 	</div>
 </template>
 
@@ -100,6 +101,7 @@ import MyRouter from './components/MyRouter'
 import MyRouterGuards from './components/MyRouterGuards'
 import MyRouterTest from './components/MyRouterTest'
 import MyTransition from './components/MyTransition'
+import MyVuex from './components/MyVuex'
 import LifeCycle from './components/LifeCycle'
 import InstanceProperties from './components/InstanceProperties'
 import ProvideInject from './components/ProvideInject'
@@ -132,6 +134,7 @@ export default {
 		MyRouterGuards,
 		MyRouterTest,
 		MyTransition,
+		MyVuex,
 		InstanceProperties,
 		ProvideInject,
 		CompDynamic,

@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import { MyPlugin_Fun, MyPlugin_Obj } from './components/MyPlugin';
 import MyComponent from './components/MyComponent';
+import store from './store';
 
 Vue.config.productionTip = false;
 
@@ -64,11 +65,11 @@ router.beforeEach((to, from, next) => {
 
     if (to.fullPath == '/admin/index') {
         if (login) {
-            next(); 
+            next();
         } else {
             next('/admin/login');
         }
-    }else{
+    } else {
         next();
     }
 });
@@ -77,6 +78,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
     el: '#app', // 表示当前实例在 index.html 文件中 id="app" 的标签
     router, // 表示当前 vue实例的路由配置文件
+    store,
     components: { App }, // 表示当前实例可以使用的 组件
     data: { dio: 'mudamudamudamuda', jojo: 'olaolaolaola' },
     provide() {
